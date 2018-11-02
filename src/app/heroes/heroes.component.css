@@ -1,0 +1,22 @@
+.card-header,
+.list-group-item.header,
+.list-group-item.header:hover {
+	background-color: HSL(0, 0%, 18%);
+	color           : HSL(0, 0%, 98%);
+	border-width    : 0;
+}
+
+.list-group-item.active {
+	background-color: HSL(211, 60%, 60%);
+	border-color    : HSL(211, 60%, 58%);
+}
+
+.list-group-item:hover {
+	background-color: HSL(0, 0%, 90%);
+	border-color    : HSL(0, 0%, 88%);
+}
+
+.list-group-item.active:hover {
+	background-color: HSL(211, 60%, 70%);
+	border-color    : HSL(211, 60%, 68%);
+}

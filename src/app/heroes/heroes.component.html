@@ -1,7 +1,41 @@
-<h2>{{hero.name  | uppercase}} Details</h2>
-<div><span>id: </span>{{hero.id}}</div>
-<div>
-	<label>name:
-		<input [(ngModel)]="hero.name" placeholder="name">
-	</label>
+<div class="container">
+	<div class="row">
+		<ul class="heroes list-group shadow rounded m-3">
+			<li class="list-group-item header font-effect-outline disabled">
+				<h4 class="text-center font-weight-bold">My Heroes</h4>
+			</li>
+			<li *ngFor="let hero of heroes"
+			        class="list-group-item"
+			        [class.selected]="hero === selectedHero"
+			        [class.active]="hero === selectedHero"
+			        (click)="onSelect(hero)">
+				<span class="badge badge-dark mr-2 p-2">{{hero.id}}</span>
+				{{hero.name}}
+			</li>
+		</ul>
+		<div>
+			<div *ngIf="selectedHero"
+			        class="card shadow rounded m-3">
+				<div class="card-header">{{selectedHero.name | uppercase}}
+					Details</div>
+				<div class="card-body ">
+					<div class="form-group">
+						<label for="id">Id</label>
+						<input id="id"
+						        class="form-control"
+						        placeholder="Id"
+						        [value]="selectedHero.id"
+						        disabled="disabled" />
+					</div>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input id="name"
+						        class="form-control"
+						        placeholder="Name"
+						        [(ngModel)]="selectedHero.name" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
